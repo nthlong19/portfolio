@@ -553,7 +553,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                             }
                         </script>
                         <h3>STEP 5: Design Data Model</h3>
-                        <img src="..\gridx\wp-content\uploads\2023\06\frame.jpg" alt="">
+                        <img src="../gridx/wp-content/uploads/2023/06/frame.jpg" alt="">
                         <h3>STEP 6: Design Database</h3>
                         <p>In reality, the database will automatically retrieve data continuously from the back-end. However, for Business K, data is only stored in formats like CSV, Excel, and Google Sheet. Therefore, we will construct a database based on the data model design.</p>
 
@@ -561,7 +561,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 <p>Input data into SQL Server and convert data types according to each field. <br>
     Name the dataset 'fact_swap' with the column 'txn_id' as the primary key for the table.</p>
 <p>We have the table following result:</p>
-<div style="text-align: center;"><img src="..\gridx\wp-content\uploads\2023\06\fact_swap.jpg" style="
+<div style="text-align: center;"><img src="../gridx/wp-content/uploads/2023\06/fact_swap.jpg" style="
     height:300px;" class="center"></div>
 
                         <h3>Delete column</h3>
@@ -571,7 +571,7 @@ ALTER TABLE dbo.fact_swap
 DROP COLUMN column1, unnamed_0
 </code></pre>
                         <p style="margin-bottom: 10px;">We have the following result:</p>
-                        <div style="text-align: center;"><img src="..\gridx\wp-content\uploads\2023\06\delete.jpg" style="
+                        <div style="text-align: center;"><img src="../gridx/wp-content/uploads/2023/06/delete.jpg" style="
                                         height:300px;" class="center"></div>
                         <hr>
                         <!--wallet-->
@@ -589,7 +589,7 @@ SELECT wallet_address, os, platform, country_code
             ORDER BY wallet_address
 </code></pre>
 <p style="margin-bottom: 10px;">We have the <b>dim_wallets</b> table following result:</p>
-<div style="text-align: center;"><img src="..\gridx\wp-content\uploads\2023\06\dim_wallets.jpg" style="
+<div style="text-align: center;"><img src="../gridx/wp-content/uploads/2023/06/dim_wallets.jpg" style="
     height:300px;" class="center"></div> <br> <br> <br>
 
 <p style="margin-bottom: 10px;">Create a <b>primary key</b> for the dim_wallets table:</p>
@@ -612,7 +612,7 @@ INTO dim_countries
 FROM dbo.fact_swap
 </code></pre> 
 <p style="margin-bottom: 10px;">We have the <b>dim_countries</b> table following result:</p><br>
-<div style="text-align: center;"><img src="..\gridx\wp-content\uploads\2023\06\countries.jpg" style="
+<div style="text-align: center;"><img src="../gridx/wp-content/uploads/2023/06/countries.jpg" style="
     height:300px;" class="center"></div> <br> <br>
 <p style="margin-bottom: 10px;">Create a <b>primary key</b> for the dim_countries table:</p>
 <pre><code>
@@ -655,7 +655,7 @@ INTO dim_token
 FROM union_token
 </code></pre>
 <p style="margin-bottom: 10px;">We have the <b>dim_token</b> table following result:</p> <br>
-                        <div style="text-align: center;"><img src="..\gridx\wp-content\uploads\2023\06\token.jpg" style="
+                        <div style="text-align: center;"><img src="../gridx/wp-content/uploads/2023/06/token.jpg" style="
                                         height:300px;" class="center"></div> <br> <br> 
 <p style="margin-bottom: 10px;">Create a <b>primary key</b> for the dim_token table</p><br>
 <pre><code>
@@ -689,7 +689,7 @@ INTO dim_date
 FROM dbo.fact_swap
 </code></pre>
 <p style="margin-bottom: 10px;">We have the <b>dim_date</b> table following result:</p>
-                        <div style="text-align: center;"><img src="..\gridx\wp-content\uploads\2023\06\date.jpg" style="
+                        <div style="text-align: center;"><img src="../gridx/wp-content/uploads/2023/06/date.jpg" style="
                                         height:300px;" class="center"></div> <br> <br>
 <p style="margin-bottom: 10px;">We have the <b>dim_date</b> table following result:</p> <br>
 <pre><code>
@@ -739,7 +739,7 @@ FROM union_token_row_number
 WHERE seq_num = 1
 </code></pre>
 <p style="margin-bottom: 10px;">We have the <b>fact_price</b> table following result:</p>
-                        <div style="text-align: center;"><img src="..\gridx\wp-content\uploads\2023\06\price.jpg" style="
+                        <div style="text-align: center;"><img src="../gridx/wp-content/uploads/2023/06/price.jpg" style="
                                         height:300px;" class="center"></div> <br>
 <p style="margin-bottom: 10px;">We have the <b>fact_price</b> table following result:</p> <br>
 <pre><code>
@@ -778,7 +778,7 @@ DROP COLUMN source_price,
              platform;
 </code></pre> <br>
 <p style="margin-bottom: 10px;">We have the <b>fact_swap</b> table following result:</p> <br>
-<div style="text-align: center;"><img src="..\gridx\wp-content\uploads\2023\06\fact.jpg" class="center"></div> <br>
+<div style="text-align: center;"><img src="../gridx/wp-content/uploads/2023/06/fact.jpg" class="center"></div> <br>
 <br><br>
 <h3>6. Generate Foreign Key</h3> <br>
 <p><b>fact_swap</b> to <b>dim_wallets</b>:</p>
@@ -820,12 +820,12 @@ ALTER TABLE dbo.fact_price
 ADD CONSTRAINT fk_fact_price_dim_token FOREIGN KEY (token_id) REFERENCES dim_token (token_id)
 </code></pre>
 <p style="margin-bottom: 10px;">We have the <b>data - model</b> table following result:</p> <br>
-<div style="text-align: center;"><img src="..\gridx\wp-content\uploads\2023\06\result.jpg" class="center"></div> <br>
+<div style="text-align: center;"><img src="../gridx/wp-content/uploads/2023/06/result.jpg" class="center"></div> <br>
 <hr>
 <h3>6. Dashboard Report</h3> <br>
 <p>Finally, let's create a dashboard to present the report of key metrics using Power BI.</p>
 
-<embed src="..\gridx\wp-content\uploads\2023\file\Crypto_Currency_Project.pdf" style=" height: 650px; width: 100%" type="application/pdf">
+<embed src="../gridx/wp-content/uploads/2023/file/Crypto_Currency_Project.pdf" style=" height: 650px; width: 100%" type="application/pdf">
 <br>
 <br>
     <p>Because I cannot directly share the dashboard on the profile for you to conveniently review and track, I have attached the .pbix file for you to download and review here <a href="..\gridx\wp-content\uploads\2023\file\Crypto_Currency_Project.pbix" download>Download File</a>. I apologize for the inconvenience.</p>
